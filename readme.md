@@ -45,14 +45,15 @@ node_modules/
 - I must _remember to restart my netlify server_ via `netlify dev` whenever I make certain changes to my code, like switching out the hard coded api secret for `process.env.API_SECRET`
 
 # Accomplishments
-
-- I like how my frontend javascript is broken down into many functions, each with their own clear purpose. This makes the code very easy to read.
+- clean code
+  - I like how my frontend javascript is broken down into many functions, each with their own clear purpose. This makes the code very easy to read.
 
 # Final thoughts
 
 - I want to learn Netlify better
   - In the past, I've used Heroku, but I really dislike how LONG it takes to load up a website deployed via HEROKU!
     So far, Netlify is proving to be much more user friendly and fast!
+- I'm glad I finally learned how to hide api keys....this was long overdue!
 
 # Next steps
 - move to javascript and css into separate files
