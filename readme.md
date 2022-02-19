@@ -2,7 +2,7 @@
 
 Although I did build a simple [fetch-weather website](https://eloquent-darwin-c9b4aa.netlify.app/) (using [this api](https://weatherstack.com/)) by following [this youtube tutorial](https://youtu.be/m2Dr4L_Ab14), _the main aim of this repo was to learn how to hide api keys with netlify functions_. Mission success!
 
-# Dependecies
+# Dependencies
 
 - axios (used inside the netlify function to make a weather api request)
 
