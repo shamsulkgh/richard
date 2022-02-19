@@ -24,11 +24,14 @@
         color: red;
         visibility: hidden;
       }
+      hr {
+        margin-top: 4rem;
+      }
     </style>
   </head>
 
   <body>
-    <h1>Get the current weather at your location:</h1>
+    <h1>Get the current weather at any location:</h1>
 
     <form class="fetch-weather-forn">
       <input
@@ -50,6 +53,13 @@
       <p class="temperature">Temperature (Fahrenheit): <span></span></p>
       <p class="description">Description: <span></span></p>
     </div>
+
+    <hr />
+    <a
+      href="https://github.com/richardkentng/hide-api-key-with-netlify-functions-3"
+      target="_blank"
+      >github repo</a
+    >
 
     <script>
       const form = document.body.querySelector(".fetch-weather-forn");
