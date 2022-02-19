@@ -53,3 +53,7 @@ node_modules/
 - I want to learn Netlify better
   - In the past, I've used Heroku, but I really dislike how LONG it takes to load up a website deployed via HEROKU!
     So far, Netlify is proving to be much more user friendly and fast!
+
+# Next steps
+- move to javascript and css into separate files
+- learn how to use Netlify to deploy full-stack projects
