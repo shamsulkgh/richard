@@ -17,7 +17,7 @@ Although I did build a simple [fetch-weather website](https://eloquent-darwin-c9
     publish = "src"
 ```
 
-- create an index.html file in a 'src' folder
+- create an index.html file in a 'src' folder. (This is where we will later write javascript to make fetch calls to our netlify function)
 - create a netlify function via: `netlify function-create --name <my-function-name>` (to use this command you should already have the netlify-cli installed via `npm i -g netlify-cli`)
   - during the function-creation process, feel free to choose a template, like the 'hello world' template!
   - Afterwards, a directory to hold functions will be created. Inside, there will be your netlify function! In my case, it is called `fetch-weather.js` because i ran `netlify function-create --name fetch-weather`
