@@ -34,8 +34,8 @@ node_modules/
 ```
 
 - Hide the api key!
-  -create a .env file and store the api secret like this `API_SECRET=probablyABunchOfNumbersAndLetters`
-  -in fetch-weather.js, provide `process.env.API_SECRET` to the axios call
+  - create a .env file and store the api secret like this `API_SECRET=probablyABunchOfNumbersAndLetters`
+  - in fetch-weather.js, provide `process.env.API_SECRET` to the axios call
 - Create a simple frontend so that users can play with your deployed site by entering a location and getting back weather data!
 
 # Lessons learned
