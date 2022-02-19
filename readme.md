@@ -5,7 +5,7 @@ Although I did build a simple fetch-weather website using [this api](https://wea
 # Lessons learned
 
 - I DO NOT need to install dotenv, even when I use a .env file and use `process.env.API_SECRET` in my netlify function.
-- I must **remember to restart my netlify server** via `netlify dev` whenever I make certain changes to my code, like switching out the hard coded api secret for `process.env.API_SECRET`
+- I must _remember to restart my netlify server_ via `netlify dev` whenever I make certain changes to my code, like switching out the hard coded api secret for `process.env.API_SECRET`
 
 # Final thoughts
 
