@@ -6,7 +6,7 @@ Although I did build a simple [fetch-weather website](https://eloquent-darwin-c9
 
 - axios (used inside the netlify function to make a weather api request)
 
-# run-through of main coding steps
+# Run-through of main coding steps
 
 - create a `netlify.toml` file. In the build context, specify a functions directory (otherwise you cannot create a netlify function...it won't know where to put it!). In the same context, specify a publish directory (otherwise you cannot run your html page on the netlify server)
   --in my case, my `netlify.toml` file looked like this:
