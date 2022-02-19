@@ -1,6 +1,6 @@
 # Purpose of this repo
 
-Although I did build a simple fetch-weather website using [this api](https://weatherstack.com/) by following a [youtube tutorial](https://youtu.be/m2Dr4L_Ab14), **the main aim of this repo was to learn how to hide api keys with netlify functions**. Mission success!
+Although I did build a simple fetch-weather website using [this api](https://weatherstack.com/) and following [this youtube tutorial](https://youtu.be/m2Dr4L_Ab14), **the main aim of this repo was to learn how to hide api keys with netlify functions**. Mission success!
 
 # Lessons learned
 
