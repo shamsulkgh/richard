@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+      }
+      input,
+      button {
+        padding: 0.5em;
+      }
+      p {
+        color: gray;
+      }
+      span {
+        color: black;
+      }
+      .error-message {
+        color: red;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Get the current weather at your location:</h1>
+
+    <form class="fetch-weather-forn">
+      <input
+        type="search"
+        class="location-input"
+        placeholder="e.g. Los Angeles"
+        required
+        autofocus
+      />
+      <button type="submit">Go</button>
+    </form>
+
+    <p class="error-message">
+      An error occured. Please enter a valid location and try again.
+    </p>
+
+    <div>
+      <p class="location">Location: <span></span></p>
+      <p class="temperature">Temperature (Fahrenheit): <span></span></p>
+      <p class="description">Description: <span></span></p>
+    </div>
+
+    <script>
+      const form = document.body.querySelector(".fetch-weather-forn");
+      const input = document.body.querySelector(".location-input");
+      const locationP = document.body.querySelector(".location");
+      const temperatureP = document.body.querySelector(".temperature");
+      const descriptionP = document.body.querySelector(".description");
+      const errorP = document.body.querySelector(".error-message");
+
+      form.addEventListener("submit", handleSubmit);
+
+      async function handleSubmit(e) {
+        e.preventDefault();
+        resetFields();
+        const res = await fetchWeather();
+        const error = checkForError(res);
+        if (error) return showErrorMessage();
+        populateFields(res);
+      }
+
+      function resetFields() {
+        [locationP, temperatureP, descriptionP].forEach(
+          (p) => (p.querySelector("span").textContent = "")
+        );
+        errorP.style.visibility = "hidden";
+      }
+
+      async function fetchWeather() {
+        try {
+          const res = await fetch(
+            `/.netlify/functions/fetch-weather?query=${input.value}`
+          );
+          return res.json();
+        } catch (error) {
+          alert("An error occurred while fetching weather data!");
+        }
+      }
+
+      function checkForError(res) {
+        return Object.keys(res).includes("success") && res.success === false;
+      }
+
+      function showErrorMessage() {
+        errorP.style.visibility = "visible";
+      }
+
+      function populateFields(res) {
+        locationP.querySelector("span").textContent = res.location.name;
+        temperatureP.querySelector("span").innerHTML =
+          res.current.temperature * (9 / 5) + 32;
+        descriptionP.querySelector("span").textContent =
+          res.current.weather_descriptions[0];
+      }
+    </script>
+  </body>
+</html>
