@@ -17,14 +17,14 @@ Although I did build a simple [fetch-weather website](https://eloquent-darwin-c9
     publish = "src"
 ```
 
-- create an index.html file in a 'src' folder. (This is where we will later write javascript to make fetch calls to our netlify function)
-- create a netlify function via: `netlify function-create --name <my-function-name>` (to use this command you should already have the netlify-cli installed via `npm i -g netlify-cli`)
-  - during the function-creation process, feel free to choose a template, like the 'hello world' template!
+- Create an index.html file in a 'src' folder. (This is where we will later write javascript to make fetch calls to our netlify function)
+- Create a netlify function via: `netlify function-create --name <my-function-name>` (to use this command you should already have the netlify-cli installed via `npm i -g netlify-cli`)
+  - During the function-creation process, feel free to choose a template, like the 'hello world' template!
   - Afterwards, a directory to hold functions will be created. Inside, there will be your netlify function! In my case, it is called `fetch-weather.js` because I ran `netlify function-create --name fetch-weather`
   - to test your netlify function:
     - run the netlify dev server via `netlify dev`
     - in the frontend javascript, make a fetch request to the netlify function. The endpoint will have the following pattern: `/.netlify/functions/<my-function-name>`. If you chose the hello world template, then your fetch call should respond with a 'hello world' message!
-- edit the netlify function code so that it uses axios to make a call to the weather api and returns that data. Now, your netlify function behaves like the weather api!
+- Edit the netlify function code so that it uses axios to make a call to the weather api and returns that data. Now, your netlify function behaves like the weather api!
 - In preparation you hide your api key, make sure to gitignore unnecessary or sensitive files!
   - .gitignore:
 
@@ -34,9 +34,10 @@ node_modules/
 ```
 
 - Hide the api key!
-  - create a .env file and store the api secret like this `API_SECRET=probablyABunchOfNumbersAndLetters`
-  - in fetch-weather.js, provide `process.env.API_SECRET` to the axios call
+  - Create a .env file and store the api secret like this `API_SECRET=probablyABunchOfNumbersAndLetters`
+  - In fetch-weather.js, provide `process.env.API_SECRET` to the axios call
 - Create a simple frontend so that users can play with your deployed site by entering a location and getting back weather data!
+- Deploy the site with Netlify!  The default settings will work, but at one point, don't forget to click 'advanced' so that you can enter the environment variable!
 
 # Lessons learned
 
