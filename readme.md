@@ -26,7 +26,7 @@ Although I did build a simple [fetch-weather website](https://eloquent-darwin-c9
     - in the frontend javascript, make a fetch request to the netlify function. The endpoint will have the following pattern: `/.netlify/functions/<my-function-name>`. If you chose the hello world template, then your fetch call should respond with a 'hello world' message!
 - edit the netlify function code so that it uses axios to make a call to the weather api and returns that data. Now, your netlify function behaves like the weather api!
 - In preparation you hide your api key, make sure to gitignore unnecessary or sensitive files!
-  -.gitignore:
+  - .gitignore:
 
 ```
 node_modules/
