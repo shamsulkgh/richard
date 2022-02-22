@@ -57,5 +57,4 @@ node_modules/
 
 # Next steps
 - move to javascript and css into separate files
-- add more features to the site!  (eg incorporate Boostrap, use localStorage to remember past searches, etc)
 - learn how to use Netlify to deploy full-stack projects
