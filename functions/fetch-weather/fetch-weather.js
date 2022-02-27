@@ -4,7 +4,7 @@ const handler = async (event) => {
   try {
     const {maxRecords, view} = event.queryStringParameters
     
-    const { data } = await axios.get("https://api.airtable.com/v0/appH9pGf1FeVfhzUe/Table1?maxRecords=${maxRecords}&view=${view}", {
+    const { data } = await axios.get("https://api.airtable.com/v0/appH9pGf1FeVfhzUe/Table1", {
       headers: {
         authorization: process.env.API_SECRET,
       },
