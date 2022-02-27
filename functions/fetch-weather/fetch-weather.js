@@ -1,9 +1,8 @@
 const axios = require("axios");
 
 const handler = async (event) => {
+  const {maxRecords, view} = event.queryStringParameters
   try {
-    const {maxRecords, view} = event.queryStringParameters
-    
     const { data } = await axios.get("https://api.airtable.com/v0/appH9pGf1FeVfhzUe/Table1", {
       headers: {
         authorization: process.env.API_SECRET,
