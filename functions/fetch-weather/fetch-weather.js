@@ -1,26 +1,20 @@
-const axios = require('axios')
+const axios = require("axios");
 
 const handler = async (event) => {
-  const {lat, long} = event.queryStringParameters
-
-  const API_SECRET = process.env.API_SECRET 
-  const url = `https://api.airtable.com/v0/appH9pGf1FeVfhzUe/Table1?api_key=${API_SECRET}&maxRecords=3&view=Grid%20view`
-
   try {
-    const { data } = await axios.get(url)
+    const { data } = await axios.get("https://api.airtable.com/v0/appH9pGf1FeVfhzUe/Table1?maxRecords=3&view=Grid%20view", {
+      headers: {
+        authorization: process.env.API_SECRET,
+      },
+    });
 
     return {
       statusCode: 200,
-      body: JSON.stringify(data)
-    }
-
+      body: JSON.stringify(data),
+    };
   } catch (error) {
-    const { status, statusText, headers, data } = error.response
-    return {
-      statusCode: status,
-      body: JSON.stringify({status, statusText, headers, data})
-    }
+    return { statusCode: 500, body: error.toString() };
   }
-}
+};
 
-module.exports = { handler }
+module.exports = { handler };
